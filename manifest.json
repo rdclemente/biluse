@@ -1,0 +1,35 @@
+{
+  "name": "Biluse",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "Chrome extension to include et bilu on websites",
+  "homepage_url": "https://github.com/rdclemente/biluse",
+  "author": "Rodrigo Clemente",
+  "short_name": "Biluse",
+  "icons": {
+  },
+  "background": {
+    "scripts": [
+      "src/background.js"
+    ],
+    "persistent": true
+  },
+  "page_action": {
+    "default_icon": "icons/icon19.png"
+  },
+  "permissions": [
+    "contentSettings"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "extra/jquery.min.js",
+        "src/biluse.js"
+      ]
+    }
+  ]
+}
