@@ -79,6 +79,7 @@
 </style>");
 
 var current = 'bilu-left-bottom';
+var times = 0;
 var positions = [
   'bilu-left-bottom',
   'bilu-left-top',
@@ -96,7 +97,10 @@ function showBilu() {
     $(biluImage).removeClass(current);
     current = positions[Math.floor(Math.random() * positions.length)];
     $(biluImage).addClass(current);
-    showBilu();
+    if(times <= 10) {
+      showBilu();
+      times++;
+    }
   }, (1000*30));
 }
 
